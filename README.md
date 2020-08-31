@@ -164,7 +164,7 @@ returns questions that has the search substring
 
 Sample: 
 ```
-curl http://127.0.0.1:5000/questions/search -X POST -H "Content-Type: application/json" -d'{"searchTerm": “Medical”}’ 
+curl http://127.0.0.1:5000/questions/search -X POST -H "Content-Type: application/json" -d'{"searchTerm": “Medical”}’
 ```
 ```
 {
@@ -191,7 +191,8 @@ Gets questions by category using the id from the url parameter.
 
 Sample: 
 ```
-curl http://127.0.0.1:5000/categories/1/questions 
+curl http://127.0.0.1:5000/categories/1/questions
+```
 
 {
   "current_category": "Science",
