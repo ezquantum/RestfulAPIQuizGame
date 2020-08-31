@@ -8,8 +8,11 @@
 
 Returns all categories
 
-sample: curl http://localhost:5000/categories
-
+sample: 
+```
+curl http://localhost:5000/categories
+```
+```
 {
         "categories": {
             "1": "Science", 
@@ -21,7 +24,7 @@ sample: curl http://localhost:5000/categories
         }, 
         "success": true
     }
-
+```
 
 ### Get /questions
 
@@ -32,7 +35,7 @@ General:
 3) pages can be queried by string
 
 EX: curl http:127.0.0.1:5000/questions
-
+```
 {
     "categories": {
         "1": "Science",
@@ -117,7 +120,7 @@ EX: curl http:127.0.0.1:5000/questions
     "success": true,
     "total_questions": 19
 }
-
+```
 
 -----------------------------------------------------------------------------------------------------------
 
@@ -125,12 +128,16 @@ EX: curl http:127.0.0.1:5000/questions
 General:
 Deletes questions by ID
 
-Sample: curl http://127.0.0.1:5000/questions/6 -X DELETE 
+Sample: 
+```
+curl http://127.0.0.1:5000/questions/6 -X DELETE 
+```
+```
         {
           "success": "True",
           "message": "Question successfully deleted"
         }
-
+```
 -----------------------------------------------------------------------------------------------------------
 
 
@@ -138,12 +145,16 @@ Sample: curl http://127.0.0.1:5000/questions/6 -X DELETE 
 General:
 Creates a new question based on a payload.
 
-Sample: curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" -d '{ "question": “Primary sclerosing biliary stenosis is caused primarily by which condition?”, "answer": “auto-immune dysfunction”, "difficulty": 5, "category": “2” }' 
+Sample: 
+```
+curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" -d '{ "question": “Primary sclerosing biliary stenosis is caused primarily by which condition?”, "answer": “auto-immune dysfunction”, "difficulty": 5, "category": “2” }'
+```
+```
 {
   "message": "Question successfully created!",
   "success": true
 }
-
+```
 -----------------------------------------------------------------------------------------------------------
 
 
@@ -151,7 +162,11 @@ Sample: curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: applicati
 General:
 returns questions that has the search substring
 
-Sample: curl http://127.0.0.1:5000/questions/search -X POST -H "Content-Type: application/json" -d'{"searchTerm": “Medical”}’ 
+Sample: 
+```
+curl http://127.0.0.1:5000/questions/search -X POST -H "Content-Type: application/json" -d'{"searchTerm": “Medical”}’ 
+```
+```
 {
   "questions": [
     {
@@ -165,7 +180,7 @@ Sample: curl http://127.0.0.1:5000/questions/search -X POST -H "Content-Type: ap
   "success": true,
   "total_questions": 20
 }
-
+```
 -----------------------------------------------------------------------------------------------------------
 
 
@@ -174,7 +189,10 @@ General:
 
 Gets questions by category using the id from the url parameter.
 
-Sample: curl http://127.0.0.1:5000/categories/1/questions 
+Sample: 
+```
+curl http://127.0.0.1:5000/categories/1/questions 
+
 {
   "current_category": "Science",
   "questions": [
@@ -214,7 +232,11 @@ Takes the category and previous questions in the request.
 
 Return random question not in previous questions.
 
-Sample: curl http://127.0.0.1:5000/quizzes -X POST -H "Content-Type: application/json" -d '{"previous_questions": [5, 9], "quiz_category": {"type": “history”, "id": "4"}}' 
+Sample: 
+```
+curl http://127.0.0.1:5000/quizzes -X POST -H "Content-Type: application/json" -d '{"previous_questions": [5, 9], "quiz_category": {"type": “history”, "id": "4"}}'
+```
+```
 {
   "question": {
     "answer": "George Washington Carver",
@@ -225,7 +247,7 @@ Sample: curl http://127.0.0.1:5000/quizzes -X POST -H "Content-Type: application
   },
   "success": true
 }
-
+```
 
 -----------------------------------------------------------------------------------------------------------
 
